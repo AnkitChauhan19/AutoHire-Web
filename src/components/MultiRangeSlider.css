@@ -1,0 +1,121 @@
+.multi-range-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.slider__track,
+.slider__range {
+    border-radius: 3px;
+    height: 5px;
+    position: absolute;
+}
+
+.slider__track {
+    background-color: #d1d5db;
+    width: 100%;
+    z-index: 1;
+    top: 18px;
+}
+
+.slider__range {
+    background-color: #4f46e5;
+    z-index: 2;
+    top: 18px;
+}
+
+.slider__left-value,
+.slider__right-value {
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    position: absolute;
+    top: -10px;
+}
+
+.slider__left-value {
+    left: 0;
+}
+
+.slider__right-value {
+    right: 0;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+    pointer-events: none;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    outline: none;
+    top: 18px;
+}
+
+.thumb--left {
+    z-index: 3;
+}
+
+.thumb--right {
+    z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+    background-color: #4f46e5;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+}
+
+.thumb::-webkit-slider-thumb:hover {
+    background-color: #4338ca;
+    transform: scale(1.1);
+}
+
+.thumb::-webkit-slider-thumb:active {
+    background-color: #3730a3;
+    transform: scale(1.15);
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+    background-color: #4f46e5;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    pointer-events: all;
+    position: relative;
+}
+
+.thumb::-moz-range-thumb:hover {
+    background-color: #4338ca;
+    transform: scale(1.1);
+}
+
+.thumb::-moz-range-thumb:active {
+    background-color: #3730a3;
+    transform: scale(1.15);
+}
