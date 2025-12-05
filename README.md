@@ -18,7 +18,7 @@
 1. Clone the repository:
 ```bash
 git clone https://github.com/AnkitChauhan19/AutoHire-Web.git
-cd AutoHire
+cd AutoHire-Web
 ```
 
 2. Install dependencies:
