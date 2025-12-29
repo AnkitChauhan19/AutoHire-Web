@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Bot, User, Briefcase, FileText, MapPin, Clock, DollarSign, Sparkles, PenTool, Search } from 'lucide-react';
 
-const Freelancer = () => {
+const Business = () => {
     const [isAiToolsOpen, setIsAiToolsOpen] = useState(false);
     const aiToolsRef = useRef(null);
 
@@ -94,19 +94,19 @@ const Freelancer = () => {
                             <div className="hidden md:flex ml-10 space-x-8">
                                 <a href="#" className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     <Briefcase className="mr-2" size={18} />
-                                    Browse Jobs
+                                    Post Jobs
                                 </a>
-                                <a href="/applications" className="border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                <a href="/manage-applicants" className="border-indigo-500 text-gray-500 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                     <FileText className="mr-2" size={18} />
-                                    Applications
+                                    Manage Applicants
                                 </a>
                                 <div
                                     className="relative"
                                     ref={aiToolsRef}
                                 >
                                     <button
-                                        className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-gray-800 transition-colors focus:outline-none shadow-sm"
-                                        style={{ border: 'none' }}
+                                        className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors focus:outline-none shadow-sm"
+                                        style={{ border: 'none', cursor: 'pointer' }}
                                         onClick={() => setIsAiToolsOpen(!isAiToolsOpen)}
                                     >
                                         <Bot className="mr-2" size={18} />
@@ -120,11 +120,11 @@ const Freelancer = () => {
                                     {isAiToolsOpen && (
                                         <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-xl z-50 overflow-hidden">
                                             <div className="py-2">
-                                                <a href="/ai-search" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100">
+                                                <a href="/ai-search" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-100 transition-colors border-b border-gray-100">
                                                     <Search size={18} className="mr-3 text-gray-500" />
-                                                    AI Job Search
+                                                    AI Search
                                                 </a>
-                                                <a href="/ai-more" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+                                                <a href="/ai-more" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-100 transition-colors">
 
                                                     More
                                                 </a>
@@ -132,8 +132,8 @@ const Freelancer = () => {
                                         </div>
                                     )}
                                 </div>
-                                <a href="/freelancer-profile" className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
-                                    JD
+                                <a href="/business-profile" className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
+                                    TF
                                 </a>
                             </div>
                         </div>
@@ -199,4 +199,4 @@ const Freelancer = () => {
     );
 };
 
-export default Freelancer;
+export default Business;

@@ -146,19 +146,7 @@ const Welcome = () => {
                                 <img alt="AutoHire AI Platform" className="w-full h-auto rounded-2xl shadow-2xl object-top"
                                     src="https://readdy.ai/api/search-image?query=Modern%20AI%20technology%20interface%20showing%20freelancer%20profiles%20and%20business%20connections%2C%20clean%20professional%20design%20with%20blue%20and%20white%20color%20scheme%2C%20futuristic%20dashboard%20with%20user%20avatars%20and%20skill%20matching%20visualization%2C%20minimalist%20background&width=600&height=500&seq=hero1&orientation=landscape"
                                     style={{ width: '100%', height: 'auto', borderRadius: '1rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', objectPosition: 'top' }} />
-                                <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg"
-                                    style={{ position: 'absolute', bottom: '-1.5rem', left: '-1.5rem', backgroundColor: 'white', padding: '1rem', borderRadius: '0.75rem', boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)' }}>
-                                    <div className="flex items-center space-x-3" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                                        <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center"
-                                            style={{ width: '3rem', height: '3rem', backgroundColor: '#dcfce7', borderRadius: '9999px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                                            <Check size={20} color="#16a34a" />
-                                        </div>
-                                        <div>
-                                            <p className="font-semibold text-gray-900" style={{ fontWeight: 600, color: '#111827', margin: 0 }}>98% Match Rate</p>
-                                            <p className="text-sm text-gray-500" style={{ fontSize: '0.875rem', color: '#6b7280', margin: 0 }}>AI-Powered Matching</p>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                         </div>
                     </div>

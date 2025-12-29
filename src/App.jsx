@@ -7,6 +7,9 @@ import Freelancer from './Freelancer';
 import FreelancerProfile from './FreelancerProfile';
 import Applications from './Applications';
 import BrowseJobs from './BrowseJobs';
+import Business from './Business';
+import ManageApplicants from './ManageApplicants';
+import BusinessProfile from './BusinessProfile';
 
 function App() {
   return (
@@ -20,6 +23,9 @@ function App() {
           <Route path="/freelancer-dashboard" element={<Freelancer />} />
           <Route path="/freelancer-profile" element={<FreelancerProfile />} />
           <Route path="/applications" element={<Applications />} />
+          <Route path="/business" element={<Business />} />
+          <Route path="/manage-applicants" element={<ManageApplicants />} />
+          <Route path="/business-profile" element={<BusinessProfile />} />
         </Routes>
       </div>
     </Router>

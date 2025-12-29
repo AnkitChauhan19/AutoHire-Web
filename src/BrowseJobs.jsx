@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Bot, Briefcase, FileText, MapPin, DollarSign, Clock, Search, Filter, X } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Bot, Briefcase, FileText, MapPin, DollarSign, Clock, Search, Filter, X, Sparkles, PenTool } from 'lucide-react';
 import MultiRangeSlider from './components/MultiRangeSlider';
 
 const BrowseJobs = () => {
@@ -7,6 +7,20 @@ const BrowseJobs = () => {
     const [selectedJobTypes, setSelectedJobTypes] = useState([]);
     const [selectedExperience, setSelectedExperience] = useState([]);
     const [salaryRange, setSalaryRange] = useState([0, 150000]);
+    const [isAiToolsOpen, setIsAiToolsOpen] = useState(false);
+    const aiToolsRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (aiToolsRef.current && !aiToolsRef.current.contains(event.target)) {
+                setIsAiToolsOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     const jobs = [
         {
@@ -126,7 +140,7 @@ const BrowseJobs = () => {
     });
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-indigo-100">
             {/* Navigation Bar */}
             <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -152,6 +166,38 @@ const BrowseJobs = () => {
                                     <FileText className="mr-2" size={18} />
                                     Applications
                                 </a>
+                                <div
+                                    className="relative"
+                                    ref={aiToolsRef}
+                                >
+                                    <button
+                                        className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-gray-800 transition-colors focus:outline-none shadow-sm"
+                                        style={{ border: 'none' }}
+                                        onClick={() => setIsAiToolsOpen(!isAiToolsOpen)}
+                                    >
+                                        <Bot className="mr-2" size={18} />
+                                        <span className="font-medium">AI Tools</span>
+                                        <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    {/* Dropdown */}
+                                    {isAiToolsOpen && (
+                                        <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-xl z-50 overflow-hidden">
+                                            <div className="py-2">
+                                                <a href="/ai-search" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100">
+                                                    <Search size={18} className="mr-3 text-gray-500" />
+                                                    AI Job Search
+                                                </a>
+                                                <a href="/ai-more" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+
+                                                    More
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                                 <a href="/freelancer-profile" className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
                                     JD
                                 </a>

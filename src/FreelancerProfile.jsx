@@ -1,7 +1,21 @@
-import React from 'react';
-import { Bot, MapPin, Mail, Phone, Briefcase, FileText, GraduationCap, Award, Link as LinkIcon, Calendar, Edit } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Bot, MapPin, Mail, Phone, Briefcase, FileText, GraduationCap, Award, Link as LinkIcon, Calendar, Edit, Sparkles, PenTool, Search } from 'lucide-react';
 
 const FreelancerProfile = () => {
+    const [isAiToolsOpen, setIsAiToolsOpen] = useState(false);
+    const aiToolsRef = useRef(null);
+
+    useEffect(() => {
+        function handleClickOutside(event) {
+            if (aiToolsRef.current && !aiToolsRef.current.contains(event.target)) {
+                setIsAiToolsOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
     const profile = {
         name: "John Doe",
         title: "Senior Full Stack Developer",
@@ -68,7 +82,7 @@ const FreelancerProfile = () => {
     };
 
     return (
-        <div className="min-h-screen bg-gray-50">
+        <div className="min-h-screen bg-indigo-100">
             {/* Navigation Bar */}
             <nav className="bg-white border-b border-gray-200 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -94,6 +108,38 @@ const FreelancerProfile = () => {
                                     <FileText className="mr-2" size={18} />
                                     Applications
                                 </a>
+                                <div
+                                    className="relative"
+                                    ref={aiToolsRef}
+                                >
+                                    <button
+                                        className="flex items-center px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-gray-800 transition-colors focus:outline-none shadow-sm"
+                                        style={{ border: 'none' }}
+                                        onClick={() => setIsAiToolsOpen(!isAiToolsOpen)}
+                                    >
+                                        <Bot className="mr-2" size={18} />
+                                        <span className="font-medium">AI Tools</span>
+                                        <svg className="ml-2 h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </button>
+
+                                    {/* Dropdown */}
+                                    {isAiToolsOpen && (
+                                        <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-xl z-50 overflow-hidden">
+                                            <div className="py-2">
+                                                <a href="/ai-search" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors border-b border-gray-100">
+                                                    <Search size={18} className="mr-3 text-gray-500" />
+                                                    AI Job Search
+                                                </a>
+                                                <a href="/ai-more" className="flex items-center px-4 py-4 text-sm text-gray-700 hover:bg-gray-50 transition-colors">
+
+                                                    More
+                                                </a>
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                                 <a href="#" className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold">
                                     JD
                                 </a>
@@ -110,7 +156,7 @@ const FreelancerProfile = () => {
                     <div className="p-6">
                         <div className="flex items-start justify-between">
                             <div className="flex items-start space-x-6">
-                                <div className="h-24 w-24 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-2xl">
+                                <div className="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-2xl">
                                     JD
                                 </div>
                                 <div>
@@ -137,7 +183,8 @@ const FreelancerProfile = () => {
                                 </div>
                             </div>
                             <button className="inline-flex items-center px-2 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 cursor-pointer">
-                                <Edit size={16} />
+                                <Edit size={16} className="mr-2"/>
+                                Edit Profile
                             </button>
                         </div>
                     </div>
