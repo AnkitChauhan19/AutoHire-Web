@@ -9,7 +9,7 @@ const SignIn = () => {
                     <div className="w-10 h-10 bg-indigo-600 rounded-lg flex items-center justify-center">
                         <Bot color="white" size={24} />
                     </div>
-                    <span className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Pacifico, serif' }}>
+                    <span className="text-2xl font-bold text-gray-900" style={{ fontFamily: 'Inter, sans-serif' }}>
                         AutoHire AI
                     </span>
                 </a>

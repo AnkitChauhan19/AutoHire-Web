@@ -150,7 +150,7 @@ const BrowseJobs = () => {
                                 <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center">
                                     <Bot color="white" size={20} />
                                 </div>
-                                <span className="text-xl font-bold text-gray-900" style={{ fontFamily: 'Pacifico, serif' }}>
+                                <span className="text-xl font-bold text-gray-900" style={{ fontFamily: 'Inter, sans-serif' }}>
                                     AutoHire AI
                                 </span>
                             </a>
@@ -349,7 +349,7 @@ const BrowseJobs = () => {
                                         setSalaryRange([0, 150000]);
                                     }}
                                     style={{
-                                        fontFamily: 'Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
+                                        fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif',
                                         fontSize: '0.875rem',
                                         display: 'flex',
                                         alignItems: 'center',
