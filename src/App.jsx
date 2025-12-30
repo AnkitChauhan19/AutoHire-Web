@@ -10,6 +10,7 @@ import BrowseJobs from './BrowseJobs';
 import Business from './Business';
 import ManageApplicants from './ManageApplicants';
 import BusinessProfile from './BusinessProfile';
+import Demo from './Demo';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/business" element={<Business />} />
           <Route path="/manage-applicants" element={<ManageApplicants />} />
           <Route path="/business-profile" element={<BusinessProfile />} />
+          <Route path="/demo" element={<Demo />} />
         </Routes>
       </div>
     </Router>

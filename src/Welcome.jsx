@@ -111,7 +111,7 @@ const Welcome = () => {
                                         <ArrowRight size={20} style={{ marginLeft: '0.5rem' }} />
                                     </a>
                                     <a className="bg-white text-indigo-600 border-2 border-indigo-600 px-8 py-4 rounded-xl font-semibold hover:bg-indigo-50 transition-colors text-center whitespace-nowrap cursor-pointer"
-                                        href="/"
+                                        href="/demo"
                                         data-discover="true"
                                         style={{
                                             backgroundColor: 'white',
@@ -480,7 +480,7 @@ const Welcome = () => {
                                     {['How It Works', 'Find Talent', 'Find Jobs', 'Pricing'].map((link, index) => (
                                         <a 
                                             key={index}
-                                            href={`#${link.toLowerCase().replace(/\s+/g, '-')}`}
+                                            href={link === 'How It Works' ? '/demo' : `#${link.toLowerCase().replace(/\s+/g, '-')}`}
                                             style={{ 
                                                 color: '#9ca3af', 
                                                 fontSize: '0.875rem', 

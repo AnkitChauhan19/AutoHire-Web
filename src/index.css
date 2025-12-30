@@ -395,6 +395,14 @@ a {
   padding-top: 0.25rem;
 }
 
+.pt-20 {
+  padding-top: 5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -494,7 +502,7 @@ a {
 }
 
 .text-indigo-800 {
-  color: #3730a3;
+  color: #6240EA;
 }
 
 .text-green-500 {
